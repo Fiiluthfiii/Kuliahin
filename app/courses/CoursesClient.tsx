@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-type IconName = "dashboard" | "calendar_today" | "check_box" | "photo_camera" | "menu_book" | "settings" | "logout" | "search" | "search_off" | "notifications" | "download" | "add" | "expand_more" | "grid_view" | "more_vert" | "access_time" | "location_on" | "school" | "assignment" | "check_circle" | "qr_code_scanner" | "folder_open" | "calendar_month" | "event_available" | "person" | "filter_alt" | "tune" | "close" | "save";
+type IconName = "dashboard" | "calendar_today" | "check_box" | "photo_camera" | "menu_book" | "settings" | "logout" | "search" | "search_off" | "notifications" | "download" | "add" | "expand_more" | "grid_view" | "more_vert" | "access_time" | "location_on" | "school" | "assignment" | "check_circle" | "qr_code_scanner" | "folder_open" | "calendar_month" | "event_available" | "person" | "filter_alt" | "tune" | "close" | "save" | "delete";
 
 function Icon({ name, className = "" }: { name: IconName; className?: string }) {
   return <span aria-hidden="true" className={`material-icons ${className}`}>{name}</span>;
@@ -107,6 +107,36 @@ export default function CoursesClient({
   const [scheduleStartTime, setScheduleStartTime] = useState("08:00");
   const [scheduleEndTime, setScheduleEndTime] = useState("10:30");
   const [courseNotes, setCourseNotes] = useState("");
+  const [deletingCourseId, setDeletingCourseId] = useState<string | null>(null);
+
+  const handleDeleteCourse = async (courseId: string, courseName: string) => {
+    const confirmed = confirm(`Apakah Anda yakin ingin menghapus mata kuliah "${courseName}"?\n\nSemua jadwal dan data terkait akan dihapus.`);
+    
+    if (!confirmed) return;
+
+    setDeletingCourseId(courseId);
+
+    try {
+      const response = await fetch(`/api/courses?id=${courseId}`, {
+        method: 'DELETE',
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to delete course');
+      }
+
+      // Success!
+      alert('Mata kuliah berhasil dihapus!');
+      router.refresh();
+    } catch (error: any) {
+      console.error('Error deleting course:', error);
+      alert('Gagal menghapus mata kuliah: ' + (error.message || 'Silakan coba lagi.'));
+    } finally {
+      setDeletingCourseId(null);
+    }
+  };
 
   const handleAddCourse = async () => {
     if (!courseName.trim()) {
@@ -362,7 +392,12 @@ export default function CoursesClient({
           {visibleCourses.length > 0 ? (
             <section className="courses-grid">
               {visibleCourses.map((course) => (
-                <CourseCard key={course.id} {...course} />
+                <CourseCard 
+                  key={course.id} 
+                  {...course} 
+                  onDelete={handleDeleteCourse}
+                  isDeleting={deletingCourseId === course.id}
+                />
               ))}
             </section>
           ) : (
@@ -600,6 +635,7 @@ export default function CoursesClient({
 }
 
 function CourseCard({
+  id,
   code,
   credits,
   title,
@@ -612,19 +648,93 @@ function CourseCard({
   task,
   taskTone,
   taskExtra,
-  color
-}: CourseData) {
+  color,
+  onDelete,
+  isDeleting
+}: CourseData & { 
+  onDelete: (id: string, name: string) => void; 
+  isDeleting: boolean;
+}) {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
-    <article className={`course-card ${color}`}>
+    <article className={`course-card ${color}`} style={{ opacity: isDeleting ? 0.5 : 1 }}>
       <div className="course-card-top">
         <div>
           <b>{code}</b>
           <span>{credits}</span>
           <i />
         </div>
-        <button aria-label={`Menu ${title}`} type="button">
-          <Icon name="more_vert" />
-        </button>
+        <div style={{ position: 'relative' }}>
+          <button 
+            aria-label={`Menu ${title}`} 
+            type="button"
+            onClick={() => setShowMenu(!showMenu)}
+            disabled={isDeleting}
+          >
+            <Icon name="more_vert" />
+          </button>
+          {showMenu && (
+            <>
+              <div 
+                style={{
+                  position: 'fixed',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  zIndex: 999
+                }}
+                onClick={() => setShowMenu(false)}
+              />
+              <div 
+                style={{
+                  position: 'absolute',
+                  top: '100%',
+                  right: 0,
+                  marginTop: '4px',
+                  background: 'white',
+                  borderRadius: '6px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                  minWidth: '140px',
+                  zIndex: 1000,
+                  overflow: 'hidden'
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowMenu(false);
+                    onDelete(id, title);
+                  }}
+                  disabled={isDeleting}
+                  style={{
+                    width: '100%',
+                    padding: '8px 12px',
+                    border: 'none',
+                    background: 'white',
+                    color: '#ef4444',
+                    fontSize: '12px',
+                    fontWeight: 500,
+                    textAlign: 'left',
+                    cursor: isDeleting ? 'not-allowed' : 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    transition: 'background 0.2s'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.background = '#fef2f2'}
+                  onMouseLeave={(e) => e.currentTarget.style.background = 'white'}
+                >
+                  <span className="material-icons" style={{ fontSize: '16px', color: '#ef4444' }}>delete</span>
+                  <span style={{ fontSize: '12px', color: '#ef4444', whiteSpace: 'nowrap' }}>
+                    {isDeleting ? 'Menghapus...' : 'Hapus'}
+                  </span>
+                </button>
+              </div>
+            </>
+          )}
+        </div>
       </div>
       <h2>{title}</h2>
       <p className="course-lecturer">
