@@ -82,9 +82,9 @@ async function getDashboardData(userId: string) {
 
   const attendanceStats = await Promise.all(
     user.courses.map(async (course) => {
-      const totalSessions = await prisma.schedule.findMany({
-        where: { courseId: course.id }
-      });
+      // Use totalSessions from course settings (user input)
+      const totalSessions = course.totalSessions || 0;
+      const maxAbsences = course.maxAbsences || 0;
 
       const attendedSessions = await prisma.attendance.findMany({
         where: {
@@ -94,22 +94,36 @@ async function getDashboardData(userId: string) {
         }
       });
 
-      const scheduleCount = totalSessions.length;
       const attendedCount = attendedSessions.length;
-      const percentage = scheduleCount > 0 ? (attendedCount / scheduleCount) * 100 : 100;
-      const safeAbsences = Math.floor(scheduleCount * 0.25);
-      const currentAbsences = scheduleCount - attendedCount;
-      const remainingSafeAbsences = Math.max(0, safeAbsences - currentAbsences);
+      const percentage = totalSessions > 0 ? (attendedCount / totalSessions) * 100 : 0;
+      
+      // Calculate remaining safe absences based on user's maxAbsences setting
+      const currentAbsences = totalSessions - attendedCount;
+      const remainingSafeAbsences = Math.max(0, maxAbsences - currentAbsences);
+
+      // Status based on percentage
+      let status = 'Bahaya';
+      let tone = 'red';
+      if (percentage >= 90) {
+        status = 'Sempurna';
+        tone = 'green';
+      } else if (percentage >= 80) {
+        status = 'Aman';
+        tone = 'blue';
+      } else if (percentage >= 75) {
+        status = 'Waspada';
+        tone = 'orange';
+      }
 
       return {
         courseId: course.id,
         courseName: course.name,
-        percentage: percentage.toFixed(0),
+        percentage: totalSessions > 0 ? percentage.toFixed(0) : '0',
         attended: attendedCount,
-        total: scheduleCount,
+        total: totalSessions,
         remainingSafeAbsences,
-        status: percentage >= 90 ? 'Sempurna' : percentage >= 80 ? 'Aman' : percentage >= 75 ? 'Waspada' : 'Bahaya',
-        tone: percentage >= 90 ? 'green' : percentage >= 80 ? 'blue' : percentage >= 75 ? 'orange' : 'red'
+        status,
+        tone
       };
     })
   );
