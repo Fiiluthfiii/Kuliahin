@@ -1,0 +1,410 @@
+{
+  "screenshot": {
+    "name": "projects/12972848849287952602/files/4742539941450543516",
+    "downloadUrl": "https://lh3.googleusercontent.com/aida/AEtjO1Uj97xqQdHiOFf-9g9B4PQfSEJgm3u3OAxeLnzV4WCag8F1QbF0ngvfS6kTXyza6HO9a39lYtX6gM_ExIX2hSK_I6vpBhaTErgf6QJncMyRDu10Zi2KYGgh4I43DVQ3EgbgOXWTkh-uaIK3GAHD1EFby9IxC7H5IHVV7Gr8eHERaUEagp1Jak8fsm7PU1Kcoka7UvUntuLwJZSmNLrGOdiA887FydkRB28L6bZztkrXotGABQcfNW3KfQ"
+  },
+  "htmlCode": {
+    "name": "projects/12972848849287952602/files/17474468696351352760",
+    "downloadUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzAwMDY1YjJkMDFkM2M4NmIwMmE5YjFmNWY5MTFjZTBiEgoSBhDo2NeCCxgBkgEkCgpwcm9qZWN0X2lkEhZCFDEyOTcyODQ4ODQ5Mjg3OTUyNjAy&filename=&opi=89354086",
+    "mimeType": "text/html"
+  },
+  "id": "b7e662b70bf04c7899c5c0bbecc26a24",
+  "generatedBy": "figaro_agent",
+  "width": "2560",
+  "height": "2048",
+  "title": "Login Mahasiswa - Kuliahin",
+  "prompt": "Halaman Login Mahasiswa untuk aplikasi Kuliahin.\nSesuai PRD Section 3.1 & 7 (/login):\n- Header selamat datang: 'Selamat Datang Kembali di Kuliahin' dengan subteks 'Masuk untuk mengelola jadwal kuliah, tugas, dan presensi foto Anda.'\n- Tombol aksi utama Google OAuth: 'Masuk dengan Google' lengkap dengan logo resmi Google SVG multi-warna, badge rekomendasi 'Rekomendasi Akun Kampus SSO'.\n- Pembatas garis tipis 'atau masuk dengan email & password'.\n- Form Input:\n  * Email Mahasiswa / Akun Kampus (placeholder: 'nama@mhs.ac.id atau email@domain.com')\n  * Kata Sandi / Password dengan ikon show/hide password toggle dan link 'Lupa kata sandi?' di kanan label\n- Checkbox 'Ingat saya di perangkat ini'\n- Tombol submit CTA primer: 'Masuk ke Akun' (warna brand indigo #4338CA dengan efek hover)\n- Link pendaftaran di bagian bawah: 'Belum punya akun Kuliahin? Daftar Sekarang'\n- Di samping atau sisi kiri/kanan card, terdapat visual highlight fitur Kuliahin: Ringkasan jadwal terstruktur, pelacak deadline tugas, dan bukti kehadiran foto Cloudflare R2 yang aman.\n- Catatan keamanan privasi data terisolasi per user sesuai PRD.\nDesain elegan, modern, bersih, typography Plus Jakarta Sans, Academic Clarity.",
+  "name": "projects/12972848849287952602/screens/b7e662b70bf04c7899c5c0bbecc26a24",
+  "theme": {
+    "colorMode": "LIGHT",
+    "font": "PLUS_JAKARTA_SANS",
+    "roundness": "ROUND_EIGHT",
+    "customColor": "#4338ca",
+    "headlineFont": "PLUS_JAKARTA_SANS",
+    "bodyFont": "INTER",
+    "labelFont": "PLUS_JAKARTA_SANS",
+    "namedColors": {
+      "status-attendance-bg": "#ECFDF5",
+      "status-absence-border": "#FECACA",
+      "secondary_container": "#6063ee",
+      "surface": "#f8f9ff",
+      "on_primary_fixed_variant": "#372abf",
+      "surface_container_high": "#dce9ff",
+      "on_primary_container": "#c1beff",
+      "secondary_fixed_dim": "#c0c1ff",
+      "surface_container_lowest": "#ffffff",
+      "on_primary_fixed": "#100069",
+      "primary_fixed": "#e3dfff",
+      "surface_bright": "#f8f9ff",
+      "inverse_on_surface": "#eaf1ff",
+      "on_surface": "#0b1c30",
+      "primary": "#2a14b4",
+      "border-focus": "#C7D2FE",
+      "error_container": "#ffdad6",
+      "on_tertiary_fixed": "#00201d",
+      "inverse_primary": "#c3c0ff",
+      "status-urgent-bg": "#FFF1F2",
+      "on_secondary": "#ffffff",
+      "text-secondary": "#475569",
+      "on_secondary_fixed": "#07006c",
+      "text-primary": "#0F172A",
+      "status-pending-border": "#FDE68A",
+      "status-pending-text": "#B45309",
+      "on_error_container": "#93000a",
+      "surface_tint": "#5148d7",
+      "border-subtle": "#E2E8F0",
+      "error": "#ba1a1a",
+      "outline": "#777586",
+      "surface_dim": "#cbdbf5",
+      "status-urgent-border": "#FECDD3",
+      "secondary": "#4648d4",
+      "status-pending-bg": "#FFFBEB",
+      "on_secondary_fixed_variant": "#2f2ebe",
+      "tertiary_fixed_dim": "#6bd8cb",
+      "background": "#f8f9ff",
+      "tertiary": "#00423c",
+      "outline_variant": "#c7c4d7",
+      "on_tertiary": "#ffffff",
+      "on_primary": "#ffffff",
+      "on_background": "#0b1c30",
+      "on_secondary_container": "#fffbff",
+      "status-absence-bg": "#FEF2F2",
+      "surface_container_low": "#eff4ff",
+      "status-attendance-border": "#A7F3D0",
+      "on_error": "#ffffff",
+      "primary_fixed_dim": "#c3c0ff",
+      "surface_variant": "#d3e4fe",
+      "status-absence-text": "#B91C1C",
+      "on_tertiary_container": "#69d6c9",
+      "secondary_fixed": "#e1e0ff",
+      "on_surface_variant": "#464554",
+      "tertiary_fixed": "#89f5e7",
+      "status-urgent-text": "#BE123C",
+      "text-muted": "#94A3B8",
+      "status-attendance-text": "#047857",
+      "on_tertiary_fixed_variant": "#005049",
+      "inverse_surface": "#213145",
+      "primary_container": "#4338ca",
+      "surface-card": "#FFFFFF",
+      "surface_container_highest": "#d3e4fe",
+      "surface-canvas": "#F8FAFC",
+      "surface_container": "#e5eeff",
+      "tertiary_container": "#005c54"
+    },
+    "colorVariant": "FIDELITY",
+    "overridePrimaryColor": "#4338ca",
+    "overrideSecondaryColor": "#6366f1",
+    "overrideTertiaryColor": "#0d9488",
+    "overrideNeutralColor": "#64748b",
+    "spacingScale": 2,
+    "typography": {
+      "label-md": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "12px",
+        "fontWeight": "600",
+        "lineHeight": "16px"
+      },
+      "headline-md": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "lineHeight": "26px",
+        "letterSpacing": "-0.01em"
+      },
+      "headline-lg": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "24px",
+        "fontWeight": "700",
+        "lineHeight": "32px",
+        "letterSpacing": "-0.02em"
+      },
+      "body-md": {
+        "fontFamily": "Inter",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "20px"
+      },
+      "display-lg-mobile": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "28px",
+        "fontWeight": "800",
+        "lineHeight": "36px",
+        "letterSpacing": "-0.02em"
+      },
+      "label-lg": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "14px",
+        "fontWeight": "600",
+        "lineHeight": "20px",
+        "letterSpacing": "-0.005em"
+      },
+      "display-lg": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "36px",
+        "fontWeight": "800",
+        "lineHeight": "44px",
+        "letterSpacing": "-0.025em"
+      },
+      "mono-code": {
+        "fontFamily": "Inter",
+        "fontSize": "12px",
+        "fontWeight": "500",
+        "lineHeight": "16px"
+      },
+      "headline-lg-mobile": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "20px",
+        "fontWeight": "700",
+        "lineHeight": "28px",
+        "letterSpacing": "-0.015em"
+      },
+      "label-sm": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "11px",
+        "fontWeight": "700",
+        "lineHeight": "14px",
+        "letterSpacing": "0.025em"
+      },
+      "headline-sm": {
+        "fontFamily": "Plus Jakarta Sans",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "lineHeight": "24px"
+      },
+      "body-lg": {
+        "fontFamily": "Inter",
+        "fontSize": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px"
+      },
+      "body-sm": {
+        "fontFamily": "Inter",
+        "fontSize": "12px",
+        "fontWeight": "400",
+        "lineHeight": "16px"
+      }
+    },
+    "spacing": {
+      "gutter-lg": "2rem",
+      "space-2xs": "0.125rem",
+      "space-sm": "0.5rem",
+      "margin": "1rem",
+      "space-xl": "2rem",
+      "space-xs": "0.25rem",
+      "margin-lg": "2.5rem",
+      "margin-md": "1.5rem",
+      "gutter-md": "1.5rem",
+      "gutter": "1rem",
+      "space-md": "1rem",
+      "space-lg": "1.5rem",
+      "space-2xl": "3rem"
+    },
+    "headlineFontFamily": "Plus Jakarta Sans",
+    "bodyFontFamily": "Inter",
+    "labelFontFamily": "Plus Jakarta Sans"
+  },
+  "deviceType": "DESKTOP",
+  "screenType": "DESIGN",
+  "screenMetadata": {
+    "agentType": "PRO_AGENT",
+    "status": "COMPLETE",
+    "displayMode": "HTML"
+  },
+  "designSystem": {
+    "name": "assets/857c7aac197c4d3a8122f85f1971a749",
+    "designSystem": {
+      "displayName": "Academic Clarity",
+      "styleGuidelines": "## Brand & Style\n\nThis design system establishes an academic productivity sanctuary for Indonesian university students balancing demanding schedules, coursework, and attendance records. It conveys precision, reliability, forward momentum, and calm focus amid semester stress. \n\nThe aesthetic marries **Modern Corporate Polish** with **Contemporary Minimalist Utility**:\n- Crisp geometric structures with intentional whitespace allow dense academic metadata (SKS count, lecture halls, countdown clocks) to remain scannable without visual fatigue.\n- High-clarity color signals translate academic stakes instantly (emerald completion, amber urgency, rose-toned critical deadlines).\n- Tactile, rounded card surfaces maintain an approachable and youthful presence suitable for personal everyday use across mobile web and desktop.\n\n## Layout & Spacing\n\nThe layout is built on a responsive 12-column grid for desktop applications and collapses to a single-column layout on handheld viewports:\n\n- **Desktop (1024px+)**: 12 columns with a fixed sidebar navigation (260px), 24px column gutters (`gutter-md`), and 32px canvas margins (`margin-lg`). Dashboards use asymmetrical splits (e.g., 8-column main planner + 4-column deadline & attendance glance).\n- **Tablet (768px - 1023px)**: 8 columns with dynamic gutters (16px) and collapsible left icon-rail navigation.\n- **Mobile (\u003c768px)**: 4 columns with 16px screen margin padding and bottom app bar. Schedule grids switch from a multi-column 7-day spread to a focused single-day swipeable view or time-ordered list view.\n- **Spacing Rhythm**: All margins, paddings, and card gaps strictly derive from an 8-point base grid (multiples of `0.5rem` / 8px), reserving `0.25rem` (4px) only for micro-badge padding and inline chip icons.\n\n## Elevation & Depth\n\nThis system avoids heavy drop shadows, employing **Tonal Layering** paired with **Ambient Indigo-Tinted Shadows** to achieve visual clarity:\n\n- **Surface Tier 0 (Canvas)**: Background canvas sits at `#F8FAFC` flat.\n- **Surface Tier 1 (Cards, Timetable Blocks)**: Pure `#FFFFFF` resting on `#F8FAFC`. Bound by a 1px perimeter outline of `#E2E8F0` coupled with a diffuse micro-shadow: `0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05)`.\n- **Surface Tier 2 (Hover States, Interactive Cards)**: On hover, actionable elements elevate slightly via: `0 8px 16px -4px rgba(67, 56, 202, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04)`, slightly shifting the border color to `#C7D2FE`.\n- **Surface Tier 3 (Modals, Slide-overs, Floating Action Buttons)**: High focal sheets use: `0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.06)`, framed against a backdrop overlay of `rgba(15, 23, 42, 0.4)` with `backdrop-filter: blur(4px)`.\n\n## Components\n\n### Buttons\n- **Primary**: Solid `#4338CA` background, white bold label, 0.5rem (8px) radius, subtle bottom glow hover (`#3730A3`). Minimum target size: 40px height desktop, 44px on mobile.\n- **Secondary**: `#EEF2FF` background with `#4338CA` text, transitioning to `#E0E7FF` on hover. Used for secondary actions (e.g., \"Unduh Jadwal\").\n- **Outline/Ghost**: Transparent background with 1px `#E2E8F0` border and `#475569` text.\n\n### Badges & Chips\n- **SKS & Course Codes**: Compact pill styling (`rounded-full`), padded `py-0.5 px-2.5`, utilizing `label-sm` (11px). Neutral courses use slate backgrounds (`#F1F5F9` text `#475569`).\n- **Attendance Status Badges**:\n  - *Hadir*: Background `#ECFDF5`, text `#047857`, 1px border `#A7F3D0`.\n  - *Izin / Sakit*: Background `#FFFBEB`, text `#B45309`, 1px border `#FDE68A`.\n  - *Alpa*: Background `#FEF2F2`, text `#B91C1C`, 1px border `#FECACA`.\n\n### Cards\n- **Schedule Card**: White surface, 16px border-radius, left edge styled with a 4px solid accent bar matching the user-assigned course color (`Course.color`). Shows course name, room code, and lecture time in clear hierarchy.\n- **Task Card**: Checkbox docked left, title strikethrough upon completion, priority pill (Urgent/Medium/Low), and dynamic relative deadline badge (e.g., \"Besok, 23:59 WIB\" in rose tone if under 24 hours).\n\n### Inputs & Photo Upload Zone\n- **Text Inputs**: Height 42px, border `#E2E8F0`, interior background `#FFFFFF`. Active focus state utilizes 2px outline in `#4338CA` with `#C7D2FE` spread glow.\n- **R2 Attendance Photo Dropzone**: Dashed 2px border `#C7D2FE` on `#F8FAFC` background. Contains an illustrative camera icon, primary upload CTA button, camera toggle trigger on mobile viewports, and an instant image preview thumbnail with a replacement trash action.\n\n### Task Checkbox & Filter Tabs\n- **Checkboxes**: 18px square with 4px border radius. Unchecked state has 1.5px `#CBD5E1` border; checked state fills with `#4338CA` presenting a crisp white checkmark SVG.\n- **Segmented Filter Tabs**: Enclosed pill container (`#F1F5F9`) housing sliding tab items for timetable days (`Sen`, `Sel`, `Rab`, `Kam`, `Jum`, `Sab`) and task status states (`Semua`, `Belum`, `Selesai`).",
+      "theme": {
+        "colorMode": "LIGHT",
+        "font": "PLUS_JAKARTA_SANS",
+        "roundness": "ROUND_EIGHT",
+        "customColor": "#4338ca",
+        "headlineFont": "PLUS_JAKARTA_SANS",
+        "bodyFont": "INTER",
+        "labelFont": "PLUS_JAKARTA_SANS",
+        "namedColors": {
+          "on_secondary_container": "#fffbff",
+          "primary_fixed": "#e3dfff",
+          "on_secondary": "#ffffff",
+          "surface_bright": "#f8f9ff",
+          "secondary": "#4648d4",
+          "border-focus": "#C7D2FE",
+          "primary_container": "#4338ca",
+          "inverse_primary": "#c3c0ff",
+          "on_tertiary": "#ffffff",
+          "error_container": "#ffdad6",
+          "text-secondary": "#475569",
+          "inverse_on_surface": "#eaf1ff",
+          "surface_container": "#e5eeff",
+          "on_secondary_fixed_variant": "#2f2ebe",
+          "on_error_container": "#93000a",
+          "border-subtle": "#E2E8F0",
+          "tertiary": "#00423c",
+          "status-absence-text": "#B91C1C",
+          "status-attendance-text": "#047857",
+          "on_secondary_fixed": "#07006c",
+          "status-absence-bg": "#FEF2F2",
+          "surface_container_highest": "#d3e4fe",
+          "surface_tint": "#5148d7",
+          "primary_fixed_dim": "#c3c0ff",
+          "surface_container_low": "#eff4ff",
+          "error": "#ba1a1a",
+          "tertiary_fixed_dim": "#6bd8cb",
+          "on_tertiary_fixed_variant": "#005049",
+          "on_error": "#ffffff",
+          "text-primary": "#0F172A",
+          "status-attendance-border": "#A7F3D0",
+          "on_surface": "#0b1c30",
+          "on_tertiary_container": "#69d6c9",
+          "text-muted": "#94A3B8",
+          "on_primary_fixed": "#100069",
+          "status-pending-border": "#FDE68A",
+          "on_background": "#0b1c30",
+          "status-attendance-bg": "#ECFDF5",
+          "surface": "#f8f9ff",
+          "outline_variant": "#c7c4d7",
+          "surface_container_high": "#dce9ff",
+          "on_primary_container": "#c1beff",
+          "status-pending-text": "#B45309",
+          "status-urgent-bg": "#FFF1F2",
+          "surface_variant": "#d3e4fe",
+          "primary": "#2a14b4",
+          "status-pending-bg": "#FFFBEB",
+          "on_primary": "#ffffff",
+          "surface_container_lowest": "#ffffff",
+          "status-absence-border": "#FECACA",
+          "status-urgent-text": "#BE123C",
+          "surface_dim": "#cbdbf5",
+          "tertiary_fixed": "#89f5e7",
+          "surface-card": "#FFFFFF",
+          "on_surface_variant": "#464554",
+          "background": "#f8f9ff",
+          "on_primary_fixed_variant": "#372abf",
+          "secondary_fixed": "#e1e0ff",
+          "status-urgent-border": "#FECDD3",
+          "tertiary_container": "#005c54",
+          "secondary_fixed_dim": "#c0c1ff",
+          "outline": "#777586",
+          "inverse_surface": "#213145",
+          "secondary_container": "#6063ee",
+          "surface-canvas": "#F8FAFC",
+          "on_tertiary_fixed": "#00201d"
+        },
+        "designMd": "---\nname: Academic Clarity\ncolors:\n  surface: '#f8f9ff'\n  surface-dim: '#cbdbf5'\n  surface-bright: '#f8f9ff'\n  surface-container-lowest: '#ffffff'\n  surface-container-low: '#eff4ff'\n  surface-container: '#e5eeff'\n  surface-container-high: '#dce9ff'\n  surface-container-highest: '#d3e4fe'\n  on-surface: '#0b1c30'\n  on-surface-variant: '#464554'\n  inverse-surface: '#213145'\n  inverse-on-surface: '#eaf1ff'\n  outline: '#777586'\n  outline-variant: '#c7c4d7'\n  surface-tint: '#5148d7'\n  primary: '#2a14b4'\n  on-primary: '#ffffff'\n  primary-container: '#4338ca'\n  on-primary-container: '#c1beff'\n  inverse-primary: '#c3c0ff'\n  secondary: '#4648d4'\n  on-secondary: '#ffffff'\n  secondary-container: '#6063ee'\n  on-secondary-container: '#fffbff'\n  tertiary: '#00423c'\n  on-tertiary: '#ffffff'\n  tertiary-container: '#005c54'\n  on-tertiary-container: '#69d6c9'\n  error: '#ba1a1a'\n  on-error: '#ffffff'\n  error-container: '#ffdad6'\n  on-error-container: '#93000a'\n  primary-fixed: '#e3dfff'\n  primary-fixed-dim: '#c3c0ff'\n  on-primary-fixed: '#100069'\n  on-primary-fixed-variant: '#372abf'\n  secondary-fixed: '#e1e0ff'\n  secondary-fixed-dim: '#c0c1ff'\n  on-secondary-fixed: '#07006c'\n  on-secondary-fixed-variant: '#2f2ebe'\n  tertiary-fixed: '#89f5e7'\n  tertiary-fixed-dim: '#6bd8cb'\n  on-tertiary-fixed: '#00201d'\n  on-tertiary-fixed-variant: '#005049'\n  background: '#f8f9ff'\n  on-background: '#0b1c30'\n  surface-variant: '#d3e4fe'\n  surface-canvas: '#F8FAFC'\n  surface-card: '#FFFFFF'\n  border-subtle: '#E2E8F0'\n  border-focus: '#C7D2FE'\n  text-primary: '#0F172A'\n  text-secondary: '#475569'\n  text-muted: '#94A3B8'\n  status-attendance-bg: '#ECFDF5'\n  status-attendance-text: '#047857'\n  status-attendance-border: '#A7F3D0'\n  status-pending-bg: '#FFFBEB'\n  status-pending-text: '#B45309'\n  status-pending-border: '#FDE68A'\n  status-urgent-bg: '#FFF1F2'\n  status-urgent-text: '#BE123C'\n  status-urgent-border: '#FECDD3'\n  status-absence-bg: '#FEF2F2'\n  status-absence-text: '#B91C1C'\n  status-absence-border: '#FECACA'\ntypography:\n  display-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 36px\n    fontWeight: '800'\n    lineHeight: 44px\n    letterSpacing: -0.025em\n  display-lg-mobile:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 28px\n    fontWeight: '800'\n    lineHeight: 36px\n    letterSpacing: -0.02em\n  headline-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 24px\n    fontWeight: '700'\n    lineHeight: 32px\n    letterSpacing: -0.02em\n  headline-lg-mobile:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 20px\n    fontWeight: '700'\n    lineHeight: 28px\n    letterSpacing: -0.015em\n  headline-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 18px\n    fontWeight: '600'\n    lineHeight: 26px\n    letterSpacing: -0.01em\n  headline-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 16px\n    fontWeight: '600'\n    lineHeight: 24px\n  body-lg:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: '400'\n    lineHeight: 24px\n  body-md:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: '400'\n    lineHeight: 20px\n  body-sm:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '400'\n    lineHeight: 16px\n  label-lg:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 14px\n    fontWeight: '600'\n    lineHeight: 20px\n    letterSpacing: -0.005em\n  label-md:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 12px\n    fontWeight: '600'\n    lineHeight: 16px\n  label-sm:\n    fontFamily: Plus Jakarta Sans\n    fontSize: 11px\n    fontWeight: '700'\n    lineHeight: 14px\n    letterSpacing: 0.025em\n  mono-code:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: '500'\n    lineHeight: 16px\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  gutter: 1rem\n  gutter-md: 1.5rem\n  gutter-lg: 2rem\n  margin: 1rem\n  margin-md: 1.5rem\n  margin-lg: 2.5rem\n  space-2xs: 0.125rem\n  space-xs: 0.25rem\n  space-sm: 0.5rem\n  space-md: 1rem\n  space-lg: 1.5rem\n  space-xl: 2rem\n  space-2xl: 3rem\n---\n\n## Brand & Style\n\nThis design system establishes an academic productivity sanctuary for Indonesian university students balancing demanding schedules, coursework, and attendance records. It conveys precision, reliability, forward momentum, and calm focus amid semester stress. \n\nThe aesthetic marries **Modern Corporate Polish** with **Contemporary Minimalist Utility**:\n- Crisp geometric structures with intentional whitespace allow dense academic metadata (SKS count, lecture halls, countdown clocks) to remain scannable without visual fatigue.\n- High-clarity color signals translate academic stakes instantly (emerald completion, amber urgency, rose-toned critical deadlines).\n- Tactile, rounded card surfaces maintain an approachable and youthful presence suitable for personal everyday use across mobile web and desktop.\n\n## Colors\n\nThe palette is anchored by `#4338CA` (Indigo 700), imparting authority and purpose without the cold sterility of legacy enterprise software. `#6366F1` acts as the active interactive layer, providing vibrant hover and active states across links, navigation anchors, and focal CTA controls.\n\n### Semantic Rules\n- **Canvas & Elevation Backgrounds**: Default view canvas strictly utilizes `surface-canvas` (`#F8FAFC`). Primary layout cards, tables, and modal layers utilize crisp `#FFFFFF` to ensure high separation.\n- **Academic Status Semantics**:\n  - **Verified Attendance / Completed Tasks**: Emerald spectrum (`#ECFDF5` background, `#047857` text, `#A7F3D0` border).\n  - **In-Progress / Upcoming Schedulings**: Amber spectrum (`#FFFBEB` background, `#B45309` text, `#FDE68A` border).\n  - **Critical Deadlines (\u003c24h) / Urgent Priority**: Rose/Coral spectrum (`#FFF1F2` background, `#BE123C` text, `#FECDD3` border).\n  - **Absence / Missed Session (Alpa)**: True Red spectrum (`#FEF2F2` background, `#B91C1C` text, `#FECACA` border).\n- **Text & Contrast Hierarchy**: Heading copy defaults to slate-black `#0F172A` (ensuring 12:1+ contrast against white cards), secondary labels to `#475569`, and placeholder or auxiliary timestamps to `#94A3B8`.\n\n## Typography\n\nThe type system balances the youthful geometric structure of **Plus Jakarta Sans** with the utilitarian precision of **Inter**. \n\n- **Display & Headings (Plus Jakarta Sans)**: Used across dashboard greetings, course title banners, and schedule header columns. High geometric apertures and tight letter spacing give titles a contemporary tech feel.\n- **Body Text (Inter)**: Handles descriptive assignment briefs, lecturer contact notes, and modal inputs where vertical metric stability and micro-legibility at 12–14px are paramount.\n- **Labels & Microcopy (Plus Jakarta Sans)**: Rendered in semi-bold and bold weights for semester badges, SKS counters, and time badges (`08:00 - 10:30 WIB`), maximizing distinct recognition in dense schedule grids.\n\n## Layout & Spacing\n\nThe layout is built on a responsive 12-column grid for desktop applications and collapses to a single-column layout on handheld viewports:\n\n- **Desktop (1024px+)**: 12 columns with a fixed sidebar navigation (260px), 24px column gutters (`gutter-md`), and 32px canvas margins (`margin-lg`). Dashboards use asymmetrical splits (e.g., 8-column main planner + 4-column deadline & attendance glance).\n- **Tablet (768px - 1023px)**: 8 columns with dynamic gutters (16px) and collapsible left icon-rail navigation.\n- **Mobile (\u003c768px)**: 4 columns with 16px screen margin padding and bottom app bar. Schedule grids switch from a multi-column 7-day spread to a focused single-day swipeable view or time-ordered list view.\n- **Spacing Rhythm**: All margins, paddings, and card gaps strictly derive from an 8-point base grid (multiples of `0.5rem` / 8px), reserving `0.25rem` (4px) only for micro-badge padding and inline chip icons.\n\n## Elevation & Depth\n\nThis system avoids heavy drop shadows, employing **Tonal Layering** paired with **Ambient Indigo-Tinted Shadows** to achieve visual clarity:\n\n- **Surface Tier 0 (Canvas)**: Background canvas sits at `#F8FAFC` flat.\n- **Surface Tier 1 (Cards, Timetable Blocks)**: Pure `#FFFFFF` resting on `#F8FAFC`. Bound by a 1px perimeter outline of `#E2E8F0` coupled with a diffuse micro-shadow: `0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05)`.\n- **Surface Tier 2 (Hover States, Interactive Cards)**: On hover, actionable elements elevate slightly via: `0 8px 16px -4px rgba(67, 56, 202, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04)`, slightly shifting the border color to `#C7D2FE`.\n- **Surface Tier 3 (Modals, Slide-overs, Floating Action Buttons)**: High focal sheets use: `0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.06)`, framed against a backdrop overlay of `rgba(15, 23, 42, 0.4)` with `backdrop-filter: blur(4px)`.\n\n## Shapes\n\nThe geometric personality features soft, welcoming, and polished rounding without sliding into cartoonish proportions:\n\n- **Base Radius (`rounded-md`, 0.5rem / 8px)**: Used for buttons, text input fields, dropdown trigger targets, and timetable time slot markers.\n- **Card Radius (`rounded-xl`, 1rem / 16px)**: Used for primary structural content containers, course overview modules, task list panels, and attendance camera upload viewports.\n- **Modal & Sheet Radius (`rounded-2xl`, 1.5rem / 24px)**: Top rounded sheets on mobile and centered desktop dialogue overlays.\n- **Pill Radius (`rounded-full`, 9999px)**: Reserved strictly for status badges (e.g., SKS count, `Hadir`, `Tugas Kuliah`), user profile avatars, and icon button enclosures.\n\n## Components\n\n### Buttons\n- **Primary**: Solid `#4338CA` background, white bold label, 0.5rem (8px) radius, subtle bottom glow hover (`#3730A3`). Minimum target size: 40px height desktop, 44px on mobile.\n- **Secondary**: `#EEF2FF` background with `#4338CA` text, transitioning to `#E0E7FF` on hover. Used for secondary actions (e.g., \"Unduh Jadwal\").\n- **Outline/Ghost**: Transparent background with 1px `#E2E8F0` border and `#475569` text.\n\n### Badges & Chips\n- **SKS & Course Codes**: Compact pill styling (`rounded-full`), padded `py-0.5 px-2.5`, utilizing `label-sm` (11px). Neutral courses use slate backgrounds (`#F1F5F9` text `#475569`).\n- **Attendance Status Badges**:\n  - *Hadir*: Background `#ECFDF5`, text `#047857`, 1px border `#A7F3D0`.\n  - *Izin / Sakit*: Background `#FFFBEB`, text `#B45309`, 1px border `#FDE68A`.\n  - *Alpa*: Background `#FEF2F2`, text `#B91C1C`, 1px border `#FECACA`.\n\n### Cards\n- **Schedule Card**: White surface, 16px border-radius, left edge styled with a 4px solid accent bar matching the user-assigned course color (`Course.color`). Shows course name, room code, and lecture time in clear hierarchy.\n- **Task Card**: Checkbox docked left, title strikethrough upon completion, priority pill (Urgent/Medium/Low), and dynamic relative deadline badge (e.g., \"Besok, 23:59 WIB\" in rose tone if under 24 hours).\n\n### Inputs & Photo Upload Zone\n- **Text Inputs**: Height 42px, border `#E2E8F0`, interior background `#FFFFFF`. Active focus state utilizes 2px outline in `#4338CA` with `#C7D2FE` spread glow.\n- **R2 Attendance Photo Dropzone**: Dashed 2px border `#C7D2FE` on `#F8FAFC` background. Contains an illustrative camera icon, primary upload CTA button, camera toggle trigger on mobile viewports, and an instant image preview thumbnail with a replacement trash action.\n\n### Task Checkbox & Filter Tabs\n- **Checkboxes**: 18px square with 4px border radius. Unchecked state has 1.5px `#CBD5E1` border; checked state fills with `#4338CA` presenting a crisp white checkmark SVG.\n- **Segmented Filter Tabs**: Enclosed pill container (`#F1F5F9`) housing sliding tab items for timetable days (`Sen`, `Sel`, `Rab`, `Kam`, `Jum`, `Sab`) and task status states (`Semua`, `Belum`, `Selesai`).",
+        "colorVariant": "FIDELITY",
+        "overridePrimaryColor": "#4338ca",
+        "overrideSecondaryColor": "#6366f1",
+        "overrideTertiaryColor": "#0d9488",
+        "overrideNeutralColor": "#64748b",
+        "spacingScale": 2,
+        "typography": {
+          "label-sm": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "11px",
+            "fontWeight": "700",
+            "lineHeight": "14px",
+            "letterSpacing": "0.025em"
+          },
+          "headline-sm": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "16px",
+            "fontWeight": "600",
+            "lineHeight": "24px"
+          },
+          "body-lg": {
+            "fontFamily": "Inter",
+            "fontSize": "16px",
+            "fontWeight": "400",
+            "lineHeight": "24px"
+          },
+          "body-sm": {
+            "fontFamily": "Inter",
+            "fontSize": "12px",
+            "fontWeight": "400",
+            "lineHeight": "16px"
+          },
+          "display-lg-mobile": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "28px",
+            "fontWeight": "800",
+            "lineHeight": "36px",
+            "letterSpacing": "-0.02em"
+          },
+          "display-lg": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "36px",
+            "fontWeight": "800",
+            "lineHeight": "44px",
+            "letterSpacing": "-0.025em"
+          },
+          "headline-lg": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "24px",
+            "fontWeight": "700",
+            "lineHeight": "32px",
+            "letterSpacing": "-0.02em"
+          },
+          "body-md": {
+            "fontFamily": "Inter",
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "lineHeight": "20px"
+          },
+          "label-lg": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "lineHeight": "20px",
+            "letterSpacing": "-0.005em"
+          },
+          "label-md": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "12px",
+            "fontWeight": "600",
+            "lineHeight": "16px"
+          },
+          "headline-md": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "18px",
+            "fontWeight": "600",
+            "lineHeight": "26px",
+            "letterSpacing": "-0.01em"
+          },
+          "headline-lg-mobile": {
+            "fontFamily": "Plus Jakarta Sans",
+            "fontSize": "20px",
+            "fontWeight": "700",
+            "lineHeight": "28px",
+            "letterSpacing": "-0.015em"
+          },
+          "mono-code": {
+            "fontFamily": "Inter",
+            "fontSize": "12px",
+            "fontWeight": "500",
+            "lineHeight": "16px"
+          }
+        },
+        "spacing": {
+          "margin": "1rem",
+          "space-lg": "1.5rem",
+          "space-2xl": "3rem",
+          "space-md": "1rem",
+          "margin-lg": "2.5rem",
+          "margin-md": "1.5rem",
+          "gutter-md": "1.5rem",
+          "gutter": "1rem",
+          "space-sm": "0.5rem",
+          "space-xs": "0.25rem",
+          "space-xl": "2rem",
+          "space-2xs": "0.125rem",
+          "gutter-lg": "2rem"
+        },
+        "headlineFontFamily": "Plus Jakarta Sans",
+        "bodyFontFamily": "Inter",
+        "labelFontFamily": "Plus Jakarta Sans"
+      }
+    },
+    "version": "1"
+  }
+}

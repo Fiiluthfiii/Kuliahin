@@ -14,6 +14,19 @@ model User {
   emailVerified DateTime?
   image         String?
   passwordHash  String?
+  nim           String?
+  major         String?
+  ipk           Float?
+  ips           Float?
+  whatsapp      String?
+  nickname      String?
+  bio           String?
+  yearEnrolled  String?
+  currentSemester String?
+  academicAdvisor String?
+  targetIps     Float?
+  faculty       String?      // Fakultas
+  university    String?      // Universitas/Institut
   courses       Course[]
   tasks         Task[]
   attendances   Attendance[]

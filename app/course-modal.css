@@ -1,0 +1,46 @@
+.course-modal-form {
+  width: min(512px, calc(100% - 32px));
+  max-height: calc(100vh - 28px);
+  padding: 0;
+  overflow: auto;
+  border-radius: 0;
+}
+
+.course-modal-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 25px 24px 23px;
+  background: #f8fafc;
+}
+
+.course-modal-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background: #4938cf;
+  border-radius: 11px;
+}
+
+.course-modal-icon .material-icons { font-size: 21px; }
+.course-modal-header h2 { color: #17213a; font-size: 18px; letter-spacing: -.4px; }
+.course-modal-header p { margin-top: 3px; color: #97a6bb; font-size: 11px; }
+.course-modal-form .course-modal-close { top: 16px; right: 16px; }
+.course-modal-body { padding: 25px 24px 28px; }
+.modal-label { display: block; margin-top: 16px; color: #17213a; font-size: 11px; font-weight: 700; }
+.modal-label:first-child { margin-top: 0; }
+.modal-label.required::after { float: right; color: #d82343; content: "*Wajib"; font-weight: 500; }
+.modal-label input,.modal-select,.modal-input-icon,.modal-label textarea { display:flex; align-items:center; width:100%; height:38px; padding:0 11px; margin-top: 6px; color:#24324b; background:#f7f9fb; border:0; border-radius:9px; outline:0; font-size:11px; font-weight:400; }
+.modal-label input::placeholder,.modal-label textarea::placeholder { color:#a0aec0; }
+.modal-two-fields { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.modal-two-fields .modal-label { margin-top:16px; }
+.modal-select { justify-content:space-between; }.modal-select .material-icons { color:#8da0ba; font-size:14px; }
+.modal-input-icon { gap:7px; }.modal-input-icon .material-icons { color:#91a2ba; font-size:15px; }.modal-input-icon input { height:100%; padding:0; margin:0; background:transparent; }
+.modal-color-options { display:flex; gap:10px; align-items:center; margin-top:9px; }.modal-color-options i { display:block; width:32px; height:32px; border-radius:50%; }.modal-color-options i.selected { border:2px solid #fff; outline:2px solid #3e2acb; background:#3924c6; }.modal-color-options i.violet { background:#a2a1ed; }.modal-color-options i.orange { background:#d69a69; }.modal-color-options i.green { background:#68ad99; }.modal-color-options i.pink { background:#d66b88; }.modal-color-options i.teal { background:#668c89; }
+.routine-slot { padding:12px 14px 13px; margin-top:16px; background:#f7f9fb; border-radius:13px; }.routine-heading { display:flex; align-items:center; justify-content:space-between; color:#1e2b44; font-size:11px; font-weight:700; }.routine-heading span { display:flex; align-items:center; gap:5px; }.routine-heading .material-icons { color:#4133cd; font-size:14px; }.routine-heading b { color:#3d31cc; font-size:11px; font-weight:500; }.routine-slot .modal-label { margin-top:12px; }.routine-slot .modal-label input,.routine-slot .modal-select { height:34px; margin-top:5px; background:#fff; }
+.modal-label textarea { height:52px; padding:9px 11px; resize:none; }
+.course-modal-footer { display:flex; justify-content:flex-end; gap:8px; padding:23px 24px; background:#f8fafc; }.course-modal-footer button { height:37px; min-width:78px; padding:0 16px; color:#53627b; background:#fff; border:0; border-radius:9px; font-size:11px; }.course-modal-footer .add-course-button { min-width:176px; color:#fff; background:#4938cf; font-weight:700; }.course-modal-footer .material-icons { font-size:14px; }
+@media (max-width:620px) { .course-modal-form { max-height:calc(100vh - 16px); }.course-modal-header,.course-modal-body,.course-modal-footer { padding-left:17px; padding-right:17px; }.modal-two-fields { gap:9px; }.modal-color-options { gap:8px; }.modal-color-options i { width:28px; height:28px; } }
