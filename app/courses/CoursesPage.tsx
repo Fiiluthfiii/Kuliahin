@@ -23,6 +23,16 @@ export default async function CoursesPage() {
         include: {
           schedules: {
             orderBy: { startTime: 'asc' }
+          },
+          tasks: {
+            where: {
+              status: { not: 'completed' }
+            }
+          },
+          attendances: {
+            where: {
+              status: 'hadir'
+            }
           }
         }
       }
@@ -50,15 +60,19 @@ export default async function CoursesPage() {
     // Get primary schedule (first one)
     const primarySchedule = course.schedules[0];
     
-    // Calculate attendance (placeholder - needs attendance system)
-    const attendancePercent = 0;
-    const attendanceText = '0% (0/0 Sesi)';
+    // Calculate attendance from actual attendance records
+    const totalSessions = course.totalSessions || 0;
+    const attendedSessions = course.attendances?.filter(a => a.status === 'hadir').length || 0;
+    const attendancePercent = totalSessions > 0 ? Math.round((attendedSessions / totalSessions) * 100) : 0;
+    const attendanceText = totalSessions > 0 
+      ? `${attendancePercent}% (${attendedSessions}/${totalSessions} Sesi)` 
+      : 'Belum ada data';
     
-    // Count active tasks (placeholder - needs task system)
-    const activeTasks = 0;
-    const taskText = activeTasks > 0 ? `${activeTasks} Tugas Aktif` : '0 Tugas Aktif';
+    // Count active tasks (incomplete tasks for this course)
+    const activeTasks = course.tasks?.filter(t => t.status !== 'completed').length || 0;
+    const taskText = activeTasks > 0 ? `${activeTasks} Tugas Aktif` : 'Tidak ada tugas';
     const taskTone = activeTasks > 0 ? 'red' : 'blue';
-    const taskExtra = activeTasks > 0 ? 'Segera' : 'Semua beres';
+    const taskExtra = activeTasks > 0 ? 'Segera' : '';
     
     return {
       id: course.id,
