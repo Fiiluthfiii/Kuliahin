@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
   }
 }
 
-// POST create a new course
+  // POST create a new course
 export async function POST(request: NextRequest) {
   try {
     const session = await getServerSession(authOptions);
@@ -50,6 +50,8 @@ export async function POST(request: NextRequest) {
       lecturer,
       color,
       semester,
+      totalSessions,
+      maxAbsences,
       schedules // Array of schedule objects: { dayOfWeek, startTime, endTime, room }
     } = body;
 
@@ -68,6 +70,8 @@ export async function POST(request: NextRequest) {
         lecturer: lecturer || null,
         color: color || 'blue',
         semester: semester || null,
+        totalSessions: totalSessions ? parseInt(totalSessions) : null,
+        maxAbsences: maxAbsences ? parseInt(maxAbsences) : null,
         schedules: schedules && schedules.length > 0 ? {
           create: schedules.map((schedule: any) => ({
             dayOfWeek: schedule.dayOfWeek,

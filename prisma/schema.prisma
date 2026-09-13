@@ -36,19 +36,21 @@ model User {
 }
 
 model Course {
-  id          String       @id @default(uuid())
-  userId      String
-  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
-  name        String
-  code        String?
-  lecturer    String?
-  sks         Int?
-  color       String?
-  semester    String?
-  schedules   Schedule[]
-  tasks       Task[]
-  attendances Attendance[]
-  createdAt   DateTime     @default(now())
+  id              String       @id @default(uuid())
+  userId          String
+  user            User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name            String
+  code            String?
+  lecturer        String?
+  sks             Int?
+  color           String?
+  semester        String?
+  totalSessions   Int?         // Total sesi pertemuan dalam semester (misal: 14 pertemuan)
+  maxAbsences     Int?         // Jatah absen maksimal (misal: 3 kali)
+  schedules       Schedule[]
+  tasks           Task[]
+  attendances     Attendance[]
+  createdAt       DateTime     @default(now())
 }
 
 model Schedule {

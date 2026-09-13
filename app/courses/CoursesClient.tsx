@@ -100,6 +100,8 @@ export default function CoursesClient({
   const [courseSks, setCourseSks] = useState("3");
   const [courseLecturer, setCourseLecturer] = useState("");
   const [courseColor, setCourseColor] = useState("blue");
+  const [totalSessions, setTotalSessions] = useState("14"); // Default 14 pertemuan
+  const [maxAbsences, setMaxAbsences] = useState("3"); // Default 3 kali absen
   const [scheduleDay, setScheduleDay] = useState("Senin");
   const [scheduleRoom, setScheduleRoom] = useState("");
   const [scheduleStartTime, setScheduleStartTime] = useState("08:00");
@@ -137,6 +139,8 @@ export default function CoursesClient({
           lecturer: courseLecturer || null,
           color: courseColor,
           semester: semester,
+          totalSessions: parseInt(totalSessions),
+          maxAbsences: parseInt(maxAbsences),
           schedules: [{
             dayOfWeek: scheduleDay,
             startTime: startDateTime.toISOString(),
@@ -156,6 +160,8 @@ export default function CoursesClient({
       setCourseSks("3");
       setCourseLecturer("");
       setCourseColor("blue");
+      setTotalSessions("14");
+      setMaxAbsences("3");
       setScheduleDay("Senin");
       setScheduleRoom("");
       setScheduleStartTime("08:00");
@@ -419,6 +425,38 @@ export default function CoursesClient({
                   />
                 </div>
               </label>
+              <div className="modal-two-fields">
+                <label className="modal-label required">
+                  Total Sesi Pertemuan
+                  <input 
+                    type="number"
+                    placeholder="14"
+                    min="1"
+                    max="20"
+                    value={totalSessions}
+                    onChange={(e) => setTotalSessions(e.target.value)}
+                    disabled={isSubmitting}
+                  />
+                  <small style={{ fontSize: '12px', color: '#666', marginTop: '4px', display: 'block' }}>
+                    Jumlah pertemuan dalam 1 semester
+                  </small>
+                </label>
+                <label className="modal-label required">
+                  Jatah Absen Maksimal
+                  <input 
+                    type="number"
+                    placeholder="3"
+                    min="0"
+                    max="10"
+                    value={maxAbsences}
+                    onChange={(e) => setMaxAbsences(e.target.value)}
+                    disabled={isSubmitting}
+                  />
+                  <small style={{ fontSize: '12px', color: '#666', marginTop: '4px', display: 'block' }}>
+                    Jika melebihi, tidak bisa ikut ujian
+                  </small>
+                </label>
+              </div>
               <label className="modal-label">
                 Pilih Warna Label Aksen
                 <div className="modal-color-options">

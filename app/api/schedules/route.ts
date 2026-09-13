@@ -52,7 +52,9 @@ export async function POST(request: Request) {
       startTime,
       endTime,
       room,
-      color
+      color,
+      totalSessions,
+      maxAbsences
     } = body;
 
     // Validate required fields
@@ -81,6 +83,8 @@ export async function POST(request: Request) {
           sks: sks ? parseInt(sks) : null,
           lecturer: lecturer || null,
           color: color || 'blue',
+          totalSessions: totalSessions ? parseInt(totalSessions) : null,
+          maxAbsences: maxAbsences ? parseInt(maxAbsences) : null,
         }
       });
     }

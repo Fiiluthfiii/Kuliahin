@@ -110,7 +110,9 @@ export default function ScheduleClient({
     startTime: '',
     endTime: '',
     room: '',
-    color: 'blue'
+    color: 'blue',
+    totalSessions: '14',
+    maxAbsences: '3'
   });
 
   const displayName = userData.nickname || userData.name.split(' ')[0];
@@ -203,7 +205,9 @@ export default function ScheduleClient({
           startTime: '',
           endTime: '',
           room: '',
-          color: 'blue'
+          color: 'blue',
+          totalSessions: '14',
+          maxAbsences: '3'
         });
 
         // Refresh page after 1 second
@@ -844,6 +848,40 @@ function AddScheduleCard({
           placeholder="Nama lengkap & gelar..."
         />
       </label>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+        <label>
+          Total Sesi Pertemuan <span style={{ color: '#ef4444' }}>*</span>
+          <input 
+            name="totalSessions"
+            type="number"
+            min="1"
+            max="20"
+            value={formData.totalSessions}
+            onChange={onInputChange}
+            placeholder="14"
+          />
+          <small style={{ fontSize: '11px', color: '#64748b', marginTop: '4px', display: 'block' }}>
+            Jumlah pertemuan dalam 1 semester
+          </small>
+        </label>
+
+        <label>
+          Jatah Absen Maksimal <span style={{ color: '#ef4444' }}>*</span>
+          <input 
+            name="maxAbsences"
+            type="number"
+            min="0"
+            max="10"
+            value={formData.maxAbsences}
+            onChange={onInputChange}
+            placeholder="3"
+          />
+          <small style={{ fontSize: '11px', color: '#ef4444', marginTop: '4px', display: 'block', fontWeight: 500 }}>
+            Jika melebihi, tidak bisa ikut ujian
+          </small>
+        </label>
+      </div>
 
       <label>
         Pilih Warna Label
