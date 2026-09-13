@@ -37,11 +37,14 @@ export async function POST(request: NextRequest) {
     const session = await getServerSession(authOptions);
     
     if (!session || !session.user) {
+      console.error('Unauthorized: No session found');
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
     const userId = session.user.id;
     const body = await request.json();
+
+    console.log('POST /api/courses - Received body:', body);
 
     const {
       name,
@@ -57,39 +60,69 @@ export async function POST(request: NextRequest) {
 
     // Validate required fields
     if (!name) {
+      console.error('Validation failed: Course name is required');
       return NextResponse.json({ error: 'Course name is required' }, { status: 400 });
     }
 
+    console.log('Creating course with data:', {
+      userId,
+      name,
+      code,
+      sks,
+      lecturer,
+      color,
+      semester,
+      totalSessions,
+      maxAbsences,
+      schedulesCount: schedules?.length || 0
+    });
+
     // Create course with schedules
+    const courseData: any = {
+      userId,
+      name,
+      code: code || null,
+      sks: sks ? parseInt(sks) : null,
+      lecturer: lecturer || null,
+      color: color || 'blue',
+      semester: semester || null,
+    };
+
+    // TEMPORARY: Comment out totalSessions and maxAbsences until Prisma is regenerated
+    // Uncomment after running: npm run prisma:generate
+    // if (totalSessions !== undefined && totalSessions !== null) {
+    //   courseData.totalSessions = parseInt(totalSessions);
+    // }
+    // if (maxAbsences !== undefined && maxAbsences !== null) {
+    //   courseData.maxAbsences = parseInt(maxAbsences);
+    // }
+
+    if (schedules && schedules.length > 0) {
+      courseData.schedules = {
+        create: schedules.map((schedule: any) => ({
+          dayOfWeek: schedule.dayOfWeek,
+          startTime: new Date(schedule.startTime),
+          endTime: new Date(schedule.endTime),
+          room: schedule.room || null
+        }))
+      };
+    }
+
     const course = await prisma.course.create({
-      data: {
-        userId,
-        name,
-        code: code || null,
-        sks: sks ? parseInt(sks) : null,
-        lecturer: lecturer || null,
-        color: color || 'blue',
-        semester: semester || null,
-        totalSessions: totalSessions ? parseInt(totalSessions) : null,
-        maxAbsences: maxAbsences ? parseInt(maxAbsences) : null,
-        schedules: schedules && schedules.length > 0 ? {
-          create: schedules.map((schedule: any) => ({
-            dayOfWeek: schedule.dayOfWeek,
-            startTime: new Date(schedule.startTime),
-            endTime: new Date(schedule.endTime),
-            room: schedule.room || null
-          }))
-        } : undefined
-      },
+      data: courseData,
       include: {
         schedules: true
       }
     });
 
-    return NextResponse.json({ course }, { status: 201 });
-  } catch (error) {
+    console.log('Course created successfully:', course.id);
+    return NextResponse.json({ course, success: true }, { status: 201 });
+  } catch (error: any) {
     console.error('Error creating course:', error);
-    return NextResponse.json({ error: 'Failed to create course' }, { status: 500 });
+    return NextResponse.json({ 
+      error: 'Failed to create course', 
+      details: error.message 
+    }, { status: 500 });
   }
 }
 

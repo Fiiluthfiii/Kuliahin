@@ -114,6 +114,17 @@ export default function CoursesClient({
       return;
     }
 
+    // Validasi input numbers
+    if (!totalSessions || parseInt(totalSessions) < 1) {
+      alert("Total sesi pertemuan harus diisi (minimal 1)!");
+      return;
+    }
+
+    if (maxAbsences === '' || parseInt(maxAbsences) < 0) {
+      alert("Jatah absen maksimal harus diisi (minimal 0)!");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -127,34 +138,41 @@ export default function CoursesClient({
       const [endHour, endMinute] = scheduleEndTime.split(':');
       endDateTime.setHours(parseInt(endHour), parseInt(endMinute), 0, 0);
 
+      const payload = {
+        name: courseName,
+        code: courseCode || null,
+        sks: parseInt(courseSks),
+        lecturer: courseLecturer || null,
+        color: courseColor,
+        semester: semester,
+        totalSessions: parseInt(totalSessions),
+        maxAbsences: parseInt(maxAbsences),
+        schedules: [{
+          dayOfWeek: scheduleDay,
+          startTime: startDateTime.toISOString(),
+          endTime: endDateTime.toISOString(),
+          room: scheduleRoom || null
+        }]
+      };
+
+      console.log('Sending payload:', payload);
+
       const response = await fetch('/api/courses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name: courseName,
-          code: courseCode || null,
-          sks: parseInt(courseSks),
-          lecturer: courseLecturer || null,
-          color: courseColor,
-          semester: semester,
-          totalSessions: parseInt(totalSessions),
-          maxAbsences: parseInt(maxAbsences),
-          schedules: [{
-            dayOfWeek: scheduleDay,
-            startTime: startDateTime.toISOString(),
-            endTime: endDateTime.toISOString(),
-            room: scheduleRoom || null
-          }]
-        }),
+        body: JSON.stringify(payload),
       });
 
+      const result = await response.json();
+      console.log('API Response:', result);
+
       if (!response.ok) {
-        throw new Error('Failed to add course');
+        throw new Error(result.error || 'Failed to add course');
       }
 
-      // Reset form
+      // Success! Reset form
       setCourseName("");
       setCourseCode("");
       setCourseSks("3");
@@ -169,11 +187,14 @@ export default function CoursesClient({
       setCourseNotes("");
       setShowModal(false);
 
+      // Show success message
+      alert('Mata kuliah berhasil ditambahkan!');
+
       // Refresh page to show new course
       router.refresh();
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error adding course:', error);
-      alert('Gagal menambahkan mata kuliah. Silakan coba lagi.');
+      alert('Gagal menambahkan mata kuliah: ' + (error.message || 'Silakan coba lagi.'));
     } finally {
       setIsSubmitting(false);
     }

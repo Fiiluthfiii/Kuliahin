@@ -83,8 +83,9 @@ export async function POST(request: Request) {
           sks: sks ? parseInt(sks) : null,
           lecturer: lecturer || null,
           color: color || 'blue',
-          totalSessions: totalSessions ? parseInt(totalSessions) : null,
-          maxAbsences: maxAbsences ? parseInt(maxAbsences) : null,
+          // TEMPORARY: Comment out until Prisma regenerated
+          // totalSessions: totalSessions ? parseInt(totalSessions) : null,
+          // maxAbsences: maxAbsences ? parseInt(maxAbsences) : null,
         }
       });
     }
