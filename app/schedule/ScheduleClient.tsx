@@ -570,6 +570,7 @@ function WeeklyCalendar({
                         <CalendarClass
                           key={schedule.id}
                           tone={tone}
+                          code={schedule.courseCode}
                           title={schedule.courseName}
                           sks={`${schedule.sks} SKS`}
                           room={schedule.room}
@@ -598,6 +599,7 @@ function WeeklyCalendar({
 
 function CalendarClass({
   tone,
+  code,
   title,
   sks,
   room,
@@ -608,6 +610,7 @@ function CalendarClass({
   current = false
 }: {
   tone: string;
+  code: string;
   title: string;
   sks: string;
   room: string;
@@ -627,6 +630,10 @@ function CalendarClass({
         {current && <b>BERLANGSUNG</b>}
       </div>
       <h3>{title}</h3>
+      <p style={{ fontSize: '11px', opacity: 0.8, marginBottom: '4px' }}>
+        <Icon name="school" />
+        {code}
+      </p>
       <p>
         <Icon name={room.includes("Lab") ? "laptop_mac" : "meeting_room"} />
         {room}
