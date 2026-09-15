@@ -120,7 +120,13 @@ export default function ScheduleClient({
   // Format time for display
   const formatTime = (timeString: string) => {
     const date = new Date(timeString);
-    return date.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', hour12: false });
+    // Ensure we're displaying in WIB (Asia/Jakarta)
+    return date.toLocaleTimeString('id-ID', { 
+      hour: '2-digit', 
+      minute: '2-digit', 
+      hour12: false,
+      timeZone: 'Asia/Jakarta'
+    });
   };
 
   // Calculate position for calendar grid
@@ -128,8 +134,28 @@ export default function ScheduleClient({
     const start = new Date(startTime);
     const end = new Date(endTime);
     
-    const startHour = start.getHours() + start.getMinutes() / 60;
-    const endHour = end.getHours() + end.getMinutes() / 60;
+    // Get hours in WIB (Asia/Jakarta timezone)
+    const startHourWIB = parseInt(start.toLocaleTimeString('id-ID', { 
+      hour: '2-digit', 
+      hour12: false,
+      timeZone: 'Asia/Jakarta'
+    }));
+    const startMinWIB = parseInt(start.toLocaleTimeString('id-ID', { 
+      minute: '2-digit',
+      timeZone: 'Asia/Jakarta'
+    }));
+    const endHourWIB = parseInt(end.toLocaleTimeString('id-ID', { 
+      hour: '2-digit', 
+      hour12: false,
+      timeZone: 'Asia/Jakarta'
+    }));
+    const endMinWIB = parseInt(end.toLocaleTimeString('id-ID', { 
+      minute: '2-digit',
+      timeZone: 'Asia/Jakarta'
+    }));
+    
+    const startHour = startHourWIB + startMinWIB / 60;
+    const endHour = endHourWIB + endMinWIB / 60;
     
     // Base hour is 7:00 AM
     const top = (startHour - 7) * 80; // 80px per hour
